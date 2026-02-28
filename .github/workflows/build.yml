@@ -1,0 +1,21 @@
+name: Build and Verify
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: Install deps
+        run: bun install
+      - name: Build
+        run: bun run build
+      - name: Verify Web
+        run: bun run verify:web
+      - name: Verify Android
+        run: bun run verify:android
