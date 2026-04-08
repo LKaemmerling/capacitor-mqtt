@@ -5,8 +5,15 @@ import Capacitor
  * Basic iOS wiring for the MqttBridge Capacitor plugin.
  */
 @objc(MqttBridgePlugin)
-public class MqttBridgePlugin: CAPPlugin {
+public class MqttBridgePlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "MqttBridgePlugin"
     public let jsName = "MqttBridge"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "connect", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "disconnect", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "subscribe", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "publish", returnType: CAPPluginReturnPromise)
+    ]
 
     @objc func connect(_ call: CAPPluginCall) {
         call.reject("MqttBridge is not implemented on iOS yet.")
@@ -23,5 +30,4 @@ public class MqttBridgePlugin: CAPPlugin {
     @objc func publish(_ call: CAPPluginCall) {
         call.reject("MqttBridge is not implemented on iOS yet.")
     }
-
 }

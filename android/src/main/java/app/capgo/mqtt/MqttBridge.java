@@ -2,9 +2,9 @@ package app.capgo.mqtt;
 
 import android.content.Context;
 import android.util.Log;
+import app.capgo.mqtt.Constants;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.PluginCall;
-import app.capgo.mqtt.Constants;
 import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 import org.eclipse.paho.android.service.MqttAndroidClient;

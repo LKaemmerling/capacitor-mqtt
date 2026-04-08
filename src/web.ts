@@ -35,10 +35,7 @@ export class MqttBridgeWeb extends WebPlugin implements MqttBridgePlugin {
   }
 
   // Implement the `subscribe` method from the `MqttBridgePlugin` interface
-  subscribe(options: {
-    topic: string;
-    qos: number;
-  }): Promise<{ topic: string; qos: number }> {
+  subscribe(options: { topic: string; qos: number }): Promise<{ topic: string; qos: number }> {
     // Log the `options` parameter
     console.log(options);
     // Throw an error indicating that this method is not implemented
@@ -46,12 +43,7 @@ export class MqttBridgeWeb extends WebPlugin implements MqttBridgePlugin {
   }
 
   // Implement the `publish` method from the `MqttBridgePlugin` interface
-  publish(options: {
-    topic: string;
-    payload: string;
-    qos: number;
-    retained: boolean;
-  }): Promise<{
+  publish(options: { topic: string; payload: string; qos: number; retained: boolean }): Promise<{
     topic: string;
     payload: string;
     qos: number;
