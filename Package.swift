@@ -7,6 +7,9 @@ let package = Package(
     products: [
         .library(
             name: "MqttPlugin",
+            targets: ["MqttPlugin"]),
+        .library(
+            name: "CapgoCapacitorMqtt",
             targets: ["MqttPlugin"])
     ],
     dependencies: [
